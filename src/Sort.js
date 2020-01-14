@@ -23,54 +23,38 @@ class HeapSort {
       ];
       this.heapify(length, biggest);
     }
+
+    const step = this.array.slice();
+    this.steps.push(step);
+
     return this.array;
   }
-  *sort() {
+  sort() {
     let length = this.array.length;
     let index = Math.floor(length / 2 - 1);
     let last = length - 1;
 
     while (index >= 0) {
-      yield this.heapify(length, index);
+      this.heapify(length, index);
       index--;
     }
 
     while (last >= 0) {
       [this.array[last], this.array[0]] = [this.array[0], this.array[last]];
-      yield this.array;
-      yield this.heapify(last, 0);
+      this.heapify(last, 0);
       last--;
     }
-
     return this.array;
   }
 
   returnValue() {
-    return this.step;
+    return this.steps;
   }
 }
 
-const sort = new HeapSort([3, 5, 2, 1, 4, 6, 7]);
-const sorting = sort.sort();
-const steps = [];
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
+// const sort = new HeapSort([3, 2, 5, 1, 4, 6]);
+// sort.sort();
+// const steps = sort.returnValue();
+// console.log(steps);
 
-console.log(steps);
 module.exports = HeapSort;

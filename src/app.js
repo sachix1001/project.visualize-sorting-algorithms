@@ -16,44 +16,26 @@ const i3 = document.getElementById("3");
 const i4 = document.getElementById("4");
 const i5 = document.getElementById("5");
 const i6 = document.getElementById("6");
-const visualize = document.getElementById("visualize");
+// const visualize = document.getElementById("visualize");
 
 const sort = new HeapSort([3, 5, 2, 1, 6, 7, 8]);
-const sorting = sort.sort();
-const steps = [];
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
-steps.push(sorting.next().value);
+sort.sort();
+const steps = sort.returnValue();
+console.log(steps);
+let index = 0;
 
-visualize.textContent = steps;
-// for (let i = 0; i < steps.length; i++) {
-//   visualize.textContent = steps[i][1];
-//   i0.style.width = steps[i][0];
-//   i1.style.width = steps[i][1];
-//   i2.style.width = steps[i][2];
-//   i3.style.width = steps[i][3];
-//   i4.style.width = steps[i][4];
-//   i5.style.width = steps[i][5];
-//   i6.style.width = steps[i][6];
-// }
-// const step1 = sorting.next().value;
-// const first = step1[0];
-// i0.style.width = first * 200;
+setInterval(() => {
+  if (index < steps.length) {
+    i0.style.width = steps[index][0] * 100;
+    i1.style.width = steps[index][1] * 100;
+    i2.style.width = steps[index][2] * 100;
+    i3.style.width = steps[index][3] * 100;
+    i4.style.width = steps[index][4] * 100;
+    i5.style.width = steps[index][5] * 100;
+    i6.style.width = steps[index][6] * 100;
+    index++;
+  }
+}, 50);
 
 // function createCheesyTitle(slogan) {
 //   const container = document.createElement("h1");
