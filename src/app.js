@@ -16,35 +16,47 @@ const i3 = document.getElementById("3");
 const i4 = document.getElementById("4");
 const i5 = document.getElementById("5");
 const i6 = document.getElementById("6");
+const i7 = document.getElementById("7");
+const i8 = document.getElementById("8");
+const i9 = document.getElementById("9");
+const i10 = document.getElementById("10");
 const start = document.getElementById("start");
 
-const sort = new HeapSort([3, 5, 2, 1, 6, 7, 8]);
+const sort = new HeapSort([3, 5, 4, 2, 9, 10, 11, 1, 6, 7, 8]);
 sort.sort();
 const steps = sort.returnValue();
 console.log(steps);
 let index = 0;
 
-i0.style.width = steps[0][0] * 100;
-i1.style.width = steps[0][1] * 100;
-i2.style.width = steps[0][2] * 100;
-i3.style.width = steps[0][3] * 100;
-i4.style.width = steps[0][4] * 100;
-i5.style.width = steps[0][5] * 100;
-i6.style.width = steps[0][6] * 100;
+i0.style.width = steps[0][0] * 90;
+i1.style.width = steps[0][1] * 90;
+i2.style.width = steps[0][2] * 90;
+i3.style.width = steps[0][3] * 90;
+i4.style.width = steps[0][4] * 90;
+i5.style.width = steps[0][5] * 90;
+i6.style.width = steps[0][6] * 90;
+i7.style.width = steps[0][7] * 90;
+i8.style.width = steps[0][8] * 90;
+i9.style.width = steps[0][9] * 90;
+i10.style.width = steps[0][10] * 90;
 
 start.addEventListener("click", () => {
   setInterval(() => {
     if (index < steps.length) {
-      i0.style.width = steps[index][0] * 100;
-      i1.style.width = steps[index][1] * 100;
-      i2.style.width = steps[index][2] * 100;
-      i3.style.width = steps[index][3] * 100;
-      i4.style.width = steps[index][4] * 100;
-      i5.style.width = steps[index][5] * 100;
-      i6.style.width = steps[index][6] * 100;
+      i0.style.width = steps[index][0] * 90;
+      i1.style.width = steps[index][1] * 90;
+      i2.style.width = steps[index][2] * 90;
+      i3.style.width = steps[index][3] * 90;
+      i4.style.width = steps[index][4] * 90;
+      i5.style.width = steps[index][5] * 90;
+      i6.style.width = steps[index][6] * 90;
+      i7.style.width = steps[index][7] * 90;
+      i8.style.width = steps[index][8] * 90;
+      i9.style.width = steps[index][9] * 90;
+      i10.style.width = steps[index][10] * 90;
       index++;
     }
-  }, 50);
+  }, 400);
 });
 
 // function createCheesyTitle(slogan) {
