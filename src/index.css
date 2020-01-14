@@ -9,6 +9,8 @@ h1 {
 
 button {
   font-size: large;
+  border-radius: 5px;
+  padding: 7px;
 }
 
 rect {
