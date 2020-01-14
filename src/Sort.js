@@ -52,9 +52,4 @@ class HeapSort {
   }
 }
 
-// const sort = new HeapSort([3, 2, 5, 1, 4, 6]);
-// sort.sort();
-// const steps = sort.returnValue();
-// console.log(steps);
-
 module.exports = HeapSort;
