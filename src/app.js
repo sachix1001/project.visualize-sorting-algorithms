@@ -16,7 +16,7 @@ const i3 = document.getElementById("3");
 const i4 = document.getElementById("4");
 const i5 = document.getElementById("5");
 const i6 = document.getElementById("6");
-// const visualize = document.getElementById("visualize");
+const start = document.getElementById("start");
 
 const sort = new HeapSort([3, 5, 2, 1, 6, 7, 8]);
 sort.sort();
@@ -24,18 +24,28 @@ const steps = sort.returnValue();
 console.log(steps);
 let index = 0;
 
-setInterval(() => {
-  if (index < steps.length) {
-    i0.style.width = steps[index][0] * 100;
-    i1.style.width = steps[index][1] * 100;
-    i2.style.width = steps[index][2] * 100;
-    i3.style.width = steps[index][3] * 100;
-    i4.style.width = steps[index][4] * 100;
-    i5.style.width = steps[index][5] * 100;
-    i6.style.width = steps[index][6] * 100;
-    index++;
-  }
-}, 50);
+i0.style.width = steps[0][0] * 100;
+i1.style.width = steps[0][1] * 100;
+i2.style.width = steps[0][2] * 100;
+i3.style.width = steps[0][3] * 100;
+i4.style.width = steps[0][4] * 100;
+i5.style.width = steps[0][5] * 100;
+i6.style.width = steps[0][6] * 100;
+
+start.addEventListener("click", () => {
+  setInterval(() => {
+    if (index < steps.length) {
+      i0.style.width = steps[index][0] * 100;
+      i1.style.width = steps[index][1] * 100;
+      i2.style.width = steps[index][2] * 100;
+      i3.style.width = steps[index][3] * 100;
+      i4.style.width = steps[index][4] * 100;
+      i5.style.width = steps[index][5] * 100;
+      i6.style.width = steps[index][6] * 100;
+      index++;
+    }
+  }, 50);
+});
 
 // function createCheesyTitle(slogan) {
 //   const container = document.createElement("h1");

@@ -1,5 +1,14 @@
 body {
-  /* background-color: #55b491; */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+button {
+  font-size: large;
 }
 
 rect {
